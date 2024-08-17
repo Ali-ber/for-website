@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-flow: row wrap;
+    flex-basis: auto;
+    flex-direction: column;
+    grid-area: 2 / 2;
+}
+svg#Layer_1 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.nav {
+    position: fixed;
+    display: flex;
+    width: 85%;
+    height: 30px;
+    background-color: #00000046;
+    border-radius: 10px;
+    padding: 10px 10px 15px 10px;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 10px;
+}
+button {
+    position: relative;
+    background: none;
+    width: 25px;
+    height: 25px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    top: 2px;
+    cursor: pointer;
+}
+div svg {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+.top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    transition: all 5s;
+}
+.top1 {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all 5s;
+}
+.under {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    transition: all 5s;
+}
+.under1 {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    transition: all 5s;
+}
+button:hover .top1 {
+    display: block;
+    filter: blur(10px);
+    transition: all 5s;
+
+}
+.active:hover .top1 {
+    display: none;
+}
+.active .top , .top1 {
+    display: none;
+    transition: all .25s;
+}
+.active .under{
+    display: block;
+    transition: all .25s;
+}
+.active .under1 {
+    display: block;
+    filter: blur(10px);
+    transition: all .25s;
+}
+.active::before {
+    content: '';
+	position: absolute;
+	width: 25px;
+	height: 6px;
+	background: #000000;
+    right: -2.5px;
+    bottom: -20px;
+    border-radius: 5px;
+    filter: blur(10px);
+	z-index: -1;
+}
+.active::after {
+    content: '';
+	position: absolute;
+	width: 25px;
+	height: 5px;
+	background: #000000;
+    right: -2.5px;
+    bottom: -20px;
+    border-radius: 5px;
+	z-index: -1;
+}
